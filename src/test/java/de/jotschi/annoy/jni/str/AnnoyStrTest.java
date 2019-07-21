@@ -18,7 +18,7 @@
  * -/-/-
  */
 
-package com.spotify.annoy.jni.str;
+package de.jotschi.annoy.jni.str;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
@@ -27,6 +27,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import com.google.common.io.Files;
+
+import de.jotschi.annoy.jni.str.AnnoyStr;
+import de.jotschi.annoy.jni.str.AnnoyStrIndex;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Paths;

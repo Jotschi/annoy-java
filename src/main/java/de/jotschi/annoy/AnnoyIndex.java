@@ -18,16 +18,30 @@
  * -/-/-
  */
 
-package com.spotify.annoy.jni.str;
+package de.jotschi.annoy;
 
-import java.io.IOException;
 import java.util.List;
 
-public interface AnnoyStrIndexBuilder {
+/**
+ * Annoy interface Modeled after: https://github.com/spotify/annoy/blob/master/annoy/__init__.py, sorta
+ */
+public interface AnnoyIndex extends AutoCloseable {
 
-  AnnoyStrIndexBuilder addItem(String key, List<Float> vector) throws IOException;
+	List<Integer> getNearestByVector(List<Float> vector, int nbNeighbors);
 
-  AnnoyStrIndexBuilder setSeed(int seed); // FIXME: should be part of the Index interface?
+	List<Integer> getNearestByVector(List<Float> vector, int nbNeighbors, int searchK);
 
-  AnnoyStrIndex build(int nbTrees) throws IOException;
+	List<Integer> getNearestByItem(int item, int nbNeighbors);
+
+	List<Integer> getNearestByItem(int item, int nbNeighbors, int searchK);
+
+	List<Float> getItemVector(int item);
+
+	float getDistance(int itemA, int itemB);
+
+	int size();
+
+	void close();
+
+	AnnoyIndex save(String filename);
 }

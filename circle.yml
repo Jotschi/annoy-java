@@ -1,8 +1,0 @@
-machine:
-  services:
-    - docker
-
-test:
-  post:
-    - bash <(curl -s https://codecov.io/bash)
-    - if ( [ $CIRCLE_BRANCH = "master" ] || [ mvn help:evaluate -Dexpression=project.version | grep '\[' | grep -q SNAPSHOT ] ); then mvn deploy -s settings.xml; fi

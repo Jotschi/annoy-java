@@ -18,26 +18,16 @@
  * -/-/-
  */
 
-package com.spotify.annoy.jni.str;
+package de.jotschi.annoy.jni.str;
 
+import java.io.IOException;
 import java.util.List;
 
-/**
- * FIXME: to we want to make it more generic and support Bytes?.
- */
-public interface AnnoyStrIndex {
+public interface AnnoyStrIndexBuilder {
 
-  List<String> getNearestByVector(List<Float> vector, int nbNeighbors);
+	AnnoyStrIndexBuilder addItem(String key, List<Float> vector) throws IOException;
 
-  List<String> getNearestByVector(List<Float> vector, int nbNeighbors, int searchK);
+	AnnoyStrIndexBuilder setSeed(int seed); // FIXME: should be part of the Index interface?
 
-  List<String> getNearestByItem(String item, int nbNeighbors);
-
-  List<String> getNearestByItem(String item, int nbNeighbors, int searchK);
-
-  List<Float> getItemVector(String item);
-
-  float getDistance(String itemA, String itemB);
-
-  int size();
+	AnnoyStrIndex build(int nbTrees) throws IOException;
 }

@@ -18,7 +18,9 @@
  * -/-/-
  */
 
-package com.spotify.annoy.jni.base;
+package de.jotschi.annoy;
+
+import de.jotschi.annoy.Annoy;
 
 /**
  * Called by `python /src/test/python/test_jarred_install.py`

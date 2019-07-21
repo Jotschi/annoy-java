@@ -18,13 +18,16 @@
  * -/-/-
  */
 
-package com.spotify.annoy.jni.base;
+package de.jotschi.annoy;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
+
+import de.jotschi.annoy.Annoy;
+import de.jotschi.annoy.AnnoyIndex;
 
 /**
  * Called by `python /src/test/python/benchmark_java_vs_python.py`
