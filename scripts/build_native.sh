@@ -52,7 +52,7 @@ cp -r $PROJECT_ROOT/native/* ./
 cp -r $PROJECT_ROOT/src/main/java/* ./
 
 echo "[INFO] Building jni headers..."
-javah -cp . -o ./com_spotify_annoy_jni_base_AnnoyIndexImpl.h -jni com.spotify.annoy.jni.base.AnnoyIndexImpl
+$JAVA_HOME/bin/javah -cp . -o ./com_spotify_annoy_jni_base_AnnoyIndexImpl.h -jni com.spotify.annoy.jni.base.AnnoyIndexImpl
 
 if [[ "$platform" == 'mac' ]]; then
     echo "[INFO] Compiling Annoy code for mac-x64..."
