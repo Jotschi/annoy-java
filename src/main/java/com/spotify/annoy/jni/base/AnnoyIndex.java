@@ -23,26 +23,25 @@ package com.spotify.annoy.jni.base;
 import java.util.List;
 
 /**
- * Annoy interface
- * Modeled after: https://github.com/spotify/annoy/blob/master/annoy/__init__.py, sorta
+ * Annoy interface Modeled after: https://github.com/spotify/annoy/blob/master/annoy/__init__.py, sorta
  */
 public interface AnnoyIndex extends AutoCloseable {
 
-  List<Integer> getNearestByVector(List<Float> vector, int nbNeighbors);
+	List<Integer> getNearestByVector(List<Float> vector, int nbNeighbors);
 
-  List<Integer> getNearestByVector(List<Float> vector, int nbNeighbors, int searchK);
+	List<Integer> getNearestByVector(List<Float> vector, int nbNeighbors, int searchK);
 
-  List<Integer> getNearestByItem(int item, int nbNeighbors);
+	List<Integer> getNearestByItem(int item, int nbNeighbors);
 
-  List<Integer> getNearestByItem(int item, int nbNeighbors, int searchK);
+	List<Integer> getNearestByItem(int item, int nbNeighbors, int searchK);
 
-  List<Float> getItemVector(int item);
+	List<Float> getItemVector(int item);
 
-  float getDistance(int itemA, int itemB);
+	float getDistance(int itemA, int itemB);
 
-  int size();
+	int size();
 
-  void close();
+	void close();
 
-  AnnoyIndex save(String filename);
+	AnnoyIndex save(String filename);
 }
