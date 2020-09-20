@@ -32,7 +32,7 @@ import java.util.List;
 public class Annoy {
 
 	public enum Metric {
-		ANGULAR, EUCLIDEAN
+		ANGULAR, EUCLIDEAN, HAMMING
 	}
 
 	public static class Builder {
